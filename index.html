@@ -755,6 +755,19 @@ footer {
   /* Section headings */
   .sh-h2 { font-size: 28px; }
   .sh-p { font-size: 14px; }
+
+  /* FAQ two-col layout */
+  #faq > div { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .faq-list { margin-top: 0; }
+
+  /* Testimonials */
+  .testi-grid { grid-template-columns: 1fr; gap: 12px; }
+
+  /* Timeline */
+  .timeline { grid-template-columns: 1fr; border-radius: var(--r); }
+  .tl-cell { border-right: none; border-bottom: 1px solid var(--line); padding: 28px 20px; }
+  .tl-cell:last-child { border-bottom: none; }
+  .tl-num { font-size: 36px; top: 20px; right: 20px; }
 }
 
 /* Extra small screens */
@@ -1056,6 +1069,141 @@ footer {
   </div>
 </div>
 
+<!-- RESULTS TIMELINE -->
+<hr class="divider">
+<div class="section" id="results">
+  <div class="sh r">
+    <span class="sh-tag">What to Expect</span>
+    <h2 class="sh-h2">Results by month,<br><em>not by magic.</em></h2>
+    <p class="sh-p">LinkedIn compounds. Here's exactly what happens across your first 3 months — no vague promises.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-cell r">
+      <div class="tl-num">1</div>
+      <span class="tl-month">Month 1 — Foundation</span>
+      <div class="tl-title">Profile overhauled. System live. Algorithm warming.</div>
+      <ul class="tl-items">
+        <li>Full profile rewrite — headline, about, banner, featured</li>
+        <li>Content calendar built around your niche</li>
+        <li>First 8–16 posts published and live</li>
+        <li>Hashtag and hook strategy deployed</li>
+        <li>Initial follower growth begins</li>
+      </ul>
+    </div>
+    <div class="tl-cell r d1">
+      <div class="tl-num">2</div>
+      <span class="tl-month">Month 2 — Momentum</span>
+      <div class="tl-title">Engagement building. Ideal clients discovering you.</div>
+      <ul class="tl-items">
+        <li>Follower growth accelerating week on week</li>
+        <li>Inbound connection requests from target clients</li>
+        <li>Profile views increasing from CFOs and business owners</li>
+        <li>Content outreach and engagement campaigns running</li>
+        <li>First inbound DMs from interested prospects</li>
+      </ul>
+    </div>
+    <div class="tl-cell r d2">
+      <div class="tl-num">3</div>
+      <span class="tl-month">Month 3 — Inbound</span>
+      <div class="tl-title">Conversations started. Clients finding you.</div>
+      <ul class="tl-items">
+        <li>Consistent inbound inquiries from content alone</li>
+        <li>CFO and business owner conversations in DMs</li>
+        <li>Speaking and media opportunities beginning</li>
+        <li>Clear ROI attribution — what LinkedIn is producing</li>
+        <li>Strategy reset for next phase of growth</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<hr class="divider">
+<div class="section" id="testimonials">
+  <div class="sh r">
+    <span class="sh-tag">Results</span>
+    <h2 class="sh-h2">What CPAs say<br><em>after working together.</em></h2>
+    <p class="sh-p">Early client results. More case studies added as they come in.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card r">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"I'd been meaning to get active on LinkedIn for two years. In 6 weeks of working with Harsh, my profile went from dormant to pulling in two qualified inquiries from CFOs I'd never have reached otherwise. The content actually sounds like me — not generic finance fluff."</p>
+      <div class="testi-person">
+        <div class="testi-avatar">MR</div>
+        <div>
+          <span class="testi-name">Michael R., CPA</span>
+          <span class="testi-title">Tax Advisory · New York, NY</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card r d1">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"What surprised me most was how quickly the right people started showing up in my notifications — not random followers, but actual business owners in my target market. By month 2 I had three conversations going that none of my previous marketing had ever produced."</p>
+      <div class="testi-person">
+        <div class="testi-avatar">SL</div>
+        <div>
+          <span class="testi-name">Sarah L., CPA</span>
+          <span class="testi-title">CFO Services · Miami, FL</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-placeholder r d2">
+      <div class="testi-placeholder-icon">💬</div>
+      <p class="testi-placeholder-text">More client results being added.<br>Currently onboarding new clients — case studies coming soon.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<hr class="divider">
+<div class="section" id="faq">
+  <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;">
+    <div class="sh r" style="margin-bottom:0;">
+      <span class="sh-tag">FAQ</span>
+      <h2 class="sh-h2">Questions<br><em>CPAs always ask.</em></h2>
+      <p class="sh-p">Straight answers. No fluff.</p>
+    </div>
+    <div class="faq-list r">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Do you actually understand US tax and accounting?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">I'm a CA Finalist with 4 years of experience working in a US-focused KPO firm handling US accounting clients. I understand tax advisory, bookkeeping, CFO services, audit — and how CPAs talk about their work with clients. <strong>Your content won't sound like it was written by a marketer who Googled "CPA."</strong> That's the core difference.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How long before I see real results?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Month 1 is foundation — profile, content system, first posts live. Month 2 is momentum — follower growth accelerates, ideal clients start discovering you. <strong>Month 3 is when inbound starts — DMs, connection requests, and conversations from content alone.</strong> That's why all engagements are minimum 3 months. LinkedIn compounds. One month tells you nothing.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What if I don't like the content?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Nothing goes live without your approval. Every post is sent to you for review before publishing. <strong>If you want changes — tone, topic, examples — I revise until it's right.</strong> The first 2 weeks are a calibration period where I learn your voice precisely. After that, revisions become rare.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How much of my time does this require?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">One 60-minute onboarding call to start. After that, <strong>roughly 15–20 minutes per week</strong> to review and approve content. I handle strategy, writing, publishing, engagement, outreach, and reporting. You focus on your clients.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Do you work with multiple CPAs in the same niche?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><strong>No. I take one client per niche per market.</strong> If you specialise in tax advisory for small businesses in New York, I won't take another CPA with the same profile while you're a client. Your positioning is protected. This is part of why spots are limited.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FINAL CTA -->
 <div class="section">
   <div class="fcta-wrap r">
@@ -1145,7 +1293,14 @@ function closeModal() { document.getElementById('modalOv').classList.remove('ope
 function handleOvClick(e) { if (e.target === document.getElementById('modalOv')) closeModal(); }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-function submitForm() {
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+
   const name = document.getElementById('fn').value.trim();
   const email = document.getElementById('fe').value.trim();
   if (!name || !email) { alert('Please enter your name and email.'); return; }
