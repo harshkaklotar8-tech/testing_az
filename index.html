@@ -3,31 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Harsh Kaklotar — LinkedIn Personal Branding for US CPA Professionals. Done-for-you LinkedIn management that builds authority and attracts premium clients.">
 <title>Harsh Kaklotar — LinkedIn Branding for US CPAs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <script src="data.js"></script>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
 :root {
-  --cream:   #faf8f4;
-  --cream2:  #f2ede4;
   --white:   #ffffff;
-  --ink:     #1a1612;
-  --ink2:    #3d3530;
-  --ink3:    #8a7f76;
-  --line:    #e4ddd3;
-  --rust:    #c4622d;
-  --rust2:   #a34f22;
-  --sand:    #e8dfd0;
-  --r:       8px;
+  --off:     #f7f7f5;
+  --ink:     #0f0f0f;
+  --ink2:    #3a3a3a;
+  --ink3:    #767676;
+  --line:    #e8e8e4;
+  --accent:  #1a56db;
+  --accent2: #0e3fa8;
+  --tag-bg:  #eef3ff;
+  --tag-txt: #1a56db;
+  --r:       6px;
 }
+
 html { scroll-behavior: smooth; }
+
 body {
-  background: var(--cream);
+  background: var(--white);
   color: var(--ink);
-  font-family: 'Figtree', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -35,487 +41,617 @@ body {
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  justify-content: space-between; padding: 0 52px;
-  background: rgba(250,248,244,0.94);
-  backdrop-filter: blur(14px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 60px; height: 68px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s;
 }
-nav.sc { border-color: var(--line); }
+nav.scrolled { border-color: var(--line); }
+
 .nav-logo {
-  font-family: 'Fraunces', serif;
-  font-size: 18px; font-weight: 700; color: var(--ink);
-  text-decoration: none; letter-spacing: -0.02em;
+  font-size: 15px; font-weight: 600; color: var(--ink);
+  text-decoration: none; letter-spacing: -0.01em;
 }
-.nav-logo span { color: var(--rust); }
-.nav-links { display: flex; gap: 32px; }
+.nav-logo span { color: var(--accent); }
+
+.nav-links { display: flex; align-items: center; gap: 36px; }
 .nav-links a {
-  font-size: 13px; color: var(--ink3);
-  text-decoration: none; transition: color 0.2s; font-weight: 400;
+  font-size: 13px; font-weight: 400; color: var(--ink2);
+  text-decoration: none; letter-spacing: -0.01em;
+  transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--ink); }
+
 .nav-btn {
-  font-size: 13px; font-weight: 600;
-  background: var(--rust); color: var(--white);
+  font-size: 13px; font-weight: 500;
+  background: var(--ink); color: var(--white);
   padding: 10px 22px; border-radius: 100px;
-  text-decoration: none; transition: background 0.2s, transform 0.15s;
+  text-decoration: none; letter-spacing: -0.01em;
+  transition: background 0.2s, transform 0.15s;
 }
-.nav-btn:hover { background: var(--rust2); transform: translateY(-1px); }
+.nav-btn:hover { background: var(--accent); transform: translateY(-1px); }
+
 .nav-mobile-btn { display: none; }
 
 /* ── HERO ── */
 .hero {
-  padding: 140px 52px 80px;
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1.1fr 0.9fr;
-  gap: 64px; align-items: center;
+  padding: 160px 60px 100px;
+  max-width: 1160px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
 }
-.hero-eyebrow {
+
+.hero-tag {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 12px; font-weight: 600; color: var(--rust);
-  letter-spacing: 0.06em; text-transform: uppercase;
-  margin-bottom: 24px;
+  background: var(--tag-bg); color: var(--tag-txt);
+  font-size: 12px; font-weight: 500;
+  padding: 6px 14px; border-radius: 100px;
+  letter-spacing: 0.02em; margin-bottom: 28px;
 }
-.hero-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--rust); }
+.hero-tag::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--accent); border-radius: 50%;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+}
 
 .hero-h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(38px, 5vw, 68px);
-  font-weight: 700; line-height: 1.05;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 700; line-height: 1.1;
   letter-spacing: -0.03em; color: var(--ink);
   margin-bottom: 20px;
 }
 .hero-h1 em {
-  font-style: italic; color: var(--rust);
+  font-style: normal; color: var(--accent);
 }
 
 .hero-p {
-  font-size: 17px; color: var(--ink2); line-height: 1.75;
-  margin-bottom: 36px; font-weight: 300; max-width: 480px;
+  font-size: 17px; color: var(--ink2);
+  line-height: 1.7; margin-bottom: 36px;
+  font-weight: 300; max-width: 480px;
 }
 
-.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
-.btn-rust {
-  font-size: 14px; font-weight: 600;
-  background: var(--rust); color: var(--white);
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.btn-fill {
+  font-size: 14px; font-weight: 500;
+  background: var(--ink); color: var(--white);
   padding: 14px 28px; border-radius: 100px;
-  text-decoration: none; transition: all 0.2s; letter-spacing: -0.01em;
+  text-decoration: none; letter-spacing: -0.01em;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
 }
-.btn-rust:hover { background: var(--rust2); transform: translateY(-1px); }
+.btn-fill:hover { background: var(--accent); transform: translateY(-1px); }
+
 .btn-ghost {
-  font-size: 14px; font-weight: 400; color: var(--ink2);
-  padding: 14px 28px; border-radius: 100px; text-decoration: none;
-  border: 1px solid var(--line); transition: all 0.2s; letter-spacing: -0.01em;
+  font-size: 14px; font-weight: 400;
+  color: var(--ink2); padding: 14px 28px;
+  border-radius: 100px; text-decoration: none;
+  border: 1px solid var(--line); letter-spacing: -0.01em;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
 }
-.btn-ghost:hover { border-color: var(--ink3); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--ink2); color: var(--ink); }
 
-/* Signature line */
-.hero-sig {
-  display: flex; align-items: center; gap: 14px;
-}
-.sig-avatar {
-  width: 48px; height: 48px; border-radius: 50%;
-  background: var(--sand); border: 2px solid var(--line);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Fraunces', serif; font-size: 16px; font-weight: 700;
-  color: var(--rust); flex-shrink: 0;
-}
-.sig-text { font-size: 13px; color: var(--ink3); line-height: 1.5; }
-.sig-text strong { color: var(--ink2); font-weight: 600; display: block; font-size: 14px; }
-
-/* Hero right — card */
+/* Hero right — proof card */
 .hero-card {
-  background: var(--white); border-radius: 20px;
-  border: 1px solid var(--line);
-  overflow: hidden;
-  box-shadow: 0 4px 32px rgba(26,22,18,0.07);
+  background: var(--off); border-radius: 20px;
+  padding: 36px; border: 1px solid var(--line);
 }
-.card-header {
-  background: var(--ink); padding: 20px 24px;
-  display: flex; align-items: center; gap: 10px;
-}
-.card-dots { display: flex; gap: 6px; }
-.cd { width: 10px; height: 10px; border-radius: 50%; }
-.cd1 { background: #ff5f57; } .cd2 { background: #febc2e; } .cd3 { background: #28c840; }
-.card-title {
-  font-size: 11px; color: rgba(255,255,255,0.4);
-  font-family: 'Figtree', sans-serif; letter-spacing: 0.04em;
-  margin-left: 4px;
-}
-.card-body { padding: 24px; }
-.card-label {
-  font-size: 10px; font-weight: 700; color: var(--ink3);
-  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px;
-}
-.stat-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 20px; }
-.stat-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 12px 14px; background: var(--cream); border-radius: 8px;
-}
-.stat-row-label { font-size: 12px; color: var(--ink3); }
-.stat-row-val {
-  font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700;
-  color: var(--ink); letter-spacing: -0.02em;
-}
-.card-note {
-  background: rgba(196,98,45,0.07); border-left: 3px solid var(--rust);
-  padding: 12px 14px; border-radius: 0 8px 8px 0;
-  font-size: 12px; color: var(--ink2); line-height: 1.6;
-}
-.card-note strong { color: var(--rust); font-weight: 600; }
 
-/* ── TRUST ── */
-.trust {
-  background: var(--white);
-  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  padding: 24px 52px;
+.hero-card-label {
+  font-size: 11px; font-weight: 500; color: var(--ink3);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero-stat-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  border: 1px solid var(--line); border-radius: var(--r);
+  overflow: hidden; margin-bottom: 20px;
+}
+.hero-stat {
+  background: var(--white); padding: 20px 18px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.hero-stat:nth-child(2) { border-right: none; }
+.hero-stat:nth-child(3) { border-bottom: none; }
+.hero-stat:nth-child(4) { border-right: none; border-bottom: none; }
+
+.hero-stat-num {
+  font-size: 26px; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.03em;
+  display: block; line-height: 1;
+}
+.hero-stat-lbl {
+  font-size: 11px; color: var(--ink3);
+  margin-top: 4px; display: block;
+}
+
+.hero-firms {
+  font-size: 12px; color: var(--ink3); line-height: 1.6;
+}
+.hero-firms strong { color: var(--ink2); font-weight: 500; }
+
+/* ── SECTION WRAPPER ── */
+.section { padding: 100px 60px; max-width: 1160px; margin: 0 auto; }
+.section-full { padding: 100px 0; }
+.section-full .section-inner { max-width: 1160px; margin: 0 auto; padding: 0 60px; }
+
+hr.divider { border: none; border-top: 1px solid var(--line); max-width: 1160px; margin: 0 auto; }
+
+/* Section header */
+.sh { margin-bottom: 56px; }
+.sh-tag {
+  font-size: 12px; font-weight: 500; color: var(--accent);
+  letter-spacing: 0.04em; text-transform: uppercase;
+  margin-bottom: 12px; display: block;
+}
+.sh-h2 {
+  font-size: clamp(28px, 3.5vw, 44px); font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.15; color: var(--ink);
+}
+.sh-h2 em { font-style: normal; color: var(--ink3); }
+.sh-p {
+  font-size: 16px; color: var(--ink3); max-width: 500px;
+  line-height: 1.7; margin-top: 14px; font-weight: 300;
+}
+
+/* ── LOGOS (Big 4 trust bar) ── */
+.trust-bar {
+  background: var(--off);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 60px;
 }
 .trust-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+  max-width: 1160px; margin: 0 auto;
+  display: flex; align-items: center; gap: 48px; flex-wrap: wrap;
 }
-.trust-label { font-size: 11px; font-weight: 600; color: var(--ink3); letter-spacing: 0.06em; text-transform: uppercase; flex-shrink: 0; }
-.trust-firms { display: flex; gap: 32px; flex-wrap: wrap; }
-.trust-firm { font-size: 14px; font-weight: 700; color: var(--ink3); letter-spacing: -0.01em; }
-
-/* ── SECTION BASE ── */
-.sec { padding: 96px 52px; max-width: 1200px; margin: 0 auto; }
-.sec-full { padding: 96px 0; }
-.sec-full .si { max-width: 1200px; margin: 0 auto; padding: 0 52px; }
-.sec-bg { background: var(--cream2); }
-
-.stag {
-  font-size: 11px; font-weight: 700; color: var(--rust);
-  letter-spacing: 0.07em; text-transform: uppercase;
-  display: block; margin-bottom: 12px;
+.trust-label {
+  font-size: 11px; font-weight: 500; color: var(--ink3);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  white-space: nowrap; flex-shrink: 0;
 }
-.sh2 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 700; letter-spacing: -0.03em;
-  line-height: 1.1; color: var(--ink);
+.trust-firms {
+  display: flex; gap: 40px; flex-wrap: wrap; align-items: center;
 }
-.sh2 em { font-style: italic; color: var(--ink3); }
-.sp {
-  font-size: 16px; color: var(--ink3);
-  max-width: 460px; line-height: 1.75;
-  margin-top: 14px; font-weight: 300;
+.trust-firm {
+  font-size: 14px; font-weight: 600; color: var(--ink3);
+  letter-spacing: -0.01em;
 }
 
 /* ── PROBLEM ── */
-.prob-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 16px; margin-top: 52px;
+.problem-list {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px; border: 1px solid var(--line); border-radius: var(--r);
+  overflow: hidden;
 }
-.prob-card {
-  background: var(--white); border: 1px solid var(--line);
-  border-radius: 14px; padding: 28px 24px;
-  transition: box-shadow 0.2s, transform 0.2s;
+.prob {
+  padding: 36px 28px; background: var(--white);
+  border-right: 1px solid var(--line);
+  transition: background 0.2s;
 }
-.prob-card:hover { box-shadow: 0 6px 24px rgba(26,22,18,0.07); transform: translateY(-2px); }
-.prob-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+.prob:last-child { border-right: none; }
+.prob:hover { background: var(--off); }
+.prob-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--tag-bg); display: flex; align-items: center;
+  justify-content: center; margin-bottom: 20px; font-size: 18px;
+}
 .prob-title {
-  font-family: 'Fraunces', serif;
-  font-size: 16px; font-weight: 600; color: var(--ink);
-  margin-bottom: 8px; letter-spacing: -0.02em;
+  font-size: 15px; font-weight: 600; color: var(--ink);
+  margin-bottom: 8px; letter-spacing: -0.01em;
 }
 .prob-body { font-size: 13px; color: var(--ink3); line-height: 1.7; }
 
 /* ── PROCESS ── */
-.proc-wrap {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: start;
+.process-list { display: flex; flex-direction: column; gap: 1px; }
+.step-row {
+  display: grid; grid-template-columns: 56px 1fr;
+  gap: 28px; padding: 32px 0; align-items: start;
+  border-bottom: 1px solid var(--line);
 }
-.proc-steps { margin-top: 0; }
-.proc-step {
-  display: flex; gap: 20px;
-  padding: 28px 0; border-bottom: 1px solid var(--line);
+.step-row:last-child { border-bottom: none; }
+.step-n {
+  font-size: 13px; font-weight: 600; color: var(--accent);
+  padding-top: 3px; font-variant-numeric: tabular-nums;
 }
-.proc-step:last-child { border-bottom: none; }
-.proc-n {
-  font-family: 'Fraunces', serif;
-  font-size: 13px; font-weight: 700; color: var(--rust);
-  padding-top: 2px; flex-shrink: 0; width: 28px;
-}
-.proc-title {
-  font-family: 'Fraunces', serif;
+.step-content {}
+.step-title {
   font-size: 16px; font-weight: 600; color: var(--ink);
-  margin-bottom: 6px; letter-spacing: -0.02em;
+  letter-spacing: -0.02em; margin-bottom: 6px;
 }
-.proc-body { font-size: 13px; color: var(--ink3); line-height: 1.7; }
+.step-body { font-size: 14px; color: var(--ink3); line-height: 1.7; }
 
 /* ── PACKAGES ── */
 .pkg-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 16px; margin-top: 52px;
+  gap: 16px; margin-top: 56px;
 }
 .pkg-card {
-  background: var(--white); border: 1px solid var(--line);
-  border-radius: 16px; padding: 28px 24px;
-  display: flex; flex-direction: column; position: relative;
-  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1px solid var(--line); border-radius: 14px;
+  padding: 32px 28px; background: var(--white);
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  position: relative;
 }
-.pkg-card:hover { box-shadow: 0 8px 32px rgba(26,22,18,0.08); transform: translateY(-2px); }
-.pkg-card.pop { background: var(--ink); border-color: var(--ink); }
+.pkg-card:hover {
+  border-color: #c0c8e8;
+  box-shadow: 0 8px 32px rgba(26,86,219,0.07);
+  transform: translateY(-3px);
+}
+.pkg-card.pop {
+  border-color: var(--accent);
+  background: #fafbff;
+}
 .pop-badge {
-  position: absolute; top: -12px; left: 24px;
-  background: var(--rust); color: var(--white);
-  font-size: 10px; font-weight: 700;
-  padding: 4px 12px; border-radius: 100px; letter-spacing: 0.04em;
-  text-transform: uppercase;
+  position: absolute; top: -12px; left: 28px;
+  background: var(--accent); color: var(--white);
+  font-size: 11px; font-weight: 600;
+  padding: 4px 12px; border-radius: 100px;
+  letter-spacing: 0.02em;
 }
-.pkg-tier { font-size: 10px; font-weight: 700; color: var(--ink3); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
-.pkg-card.pop .pkg-tier { color: rgba(255,255,255,0.35); }
+.pkg-tier {
+  font-size: 11px; font-weight: 500; color: var(--ink3);
+  letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px;
+}
 .pkg-name {
-  font-family: 'Fraunces', serif;
-  font-size: 22px; font-weight: 700; color: var(--ink);
-  letter-spacing: -0.03em; margin-bottom: 4px;
+  font-size: 22px; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.02em; margin-bottom: 4px;
 }
-.pkg-card.pop .pkg-name { color: var(--white); }
-.pkg-sub {
-  font-size: 13px; color: var(--ink3); font-family: 'Fraunces', serif;
-  font-style: italic; margin-bottom: 20px;
+.pkg-tagline {
+  font-size: 13px; color: var(--ink3);
+  margin-bottom: 24px; font-family: 'Lora', serif;
+  font-style: italic;
 }
-.pkg-card.pop .pkg-sub { color: rgba(255,255,255,0.45); }
-.pkg-sep { border: none; border-top: 1px solid var(--line); margin-bottom: 18px; }
-.pkg-card.pop .pkg-sep { border-color: rgba(255,255,255,0.12); }
+.pkg-sep { border: none; border-top: 1px solid var(--line); margin-bottom: 20px; }
 .pkg-feats { list-style: none; flex: 1; margin-bottom: 24px; }
 .pkg-feats li {
   font-size: 13px; color: var(--ink2); padding: 7px 0;
   border-bottom: 1px solid var(--line);
-  display: flex; gap: 10px; line-height: 1.5;
+  display: flex; gap: 10px; align-items: flex-start; line-height: 1.5;
 }
-.pkg-card.pop .pkg-feats li { color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.1); }
 .pkg-feats li:last-child { border-bottom: none; }
-.pkg-feats li::before { content: '→'; color: var(--rust); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
-.pkg-card.pop .pkg-feats li::before { color: rgba(196,98,45,0.8); }
-.pkg-cta-a {
+.pkg-feats li::before {
+  content: '✓'; color: var(--accent); font-weight: 600;
+  font-size: 12px; flex-shrink: 0; margin-top: 1px;
+}
+.pkg-cta-btn {
   display: block; text-align: center;
-  font-size: 13px; font-weight: 600;
+  font-size: 13px; font-weight: 500;
   padding: 13px; border-radius: 100px;
   text-decoration: none; letter-spacing: -0.01em;
   transition: all 0.2s;
-  border: 1.5px solid var(--line); color: var(--ink);
+  border: 1px solid var(--ink);
+  color: var(--ink); background: var(--white);
 }
-.pkg-cta-a:hover { border-color: var(--rust); color: var(--rust); }
-.pkg-card.pop .pkg-cta-a { background: var(--rust); color: var(--white); border: none; }
-.pkg-card.pop .pkg-cta-a:hover { background: var(--rust2); }
-.pkg-terms { font-size: 11px; color: var(--ink3); text-align: center; margin-top: 10px; }
-.pkg-card.pop .pkg-terms { color: rgba(255,255,255,0.25); }
+.pkg-cta-btn:hover { background: var(--ink); color: var(--white); }
+.pkg-card.pop .pkg-cta-btn {
+  background: var(--accent); color: var(--white); border-color: var(--accent);
+}
+.pkg-card.pop .pkg-cta-btn:hover { background: var(--accent2); border-color: var(--accent2); }
+.pkg-terms {
+  font-size: 11px; color: var(--ink3); text-align: center;
+  margin-top: 10px; letter-spacing: 0.02em;
+}
 
 /* ── ABOUT ── */
 .about-wrap {
-  display: grid; grid-template-columns: 0.85fr 1.15fr;
-  gap: 72px; align-items: start;
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 80px; align-items: start;
 }
-.about-photo-wrap { position: relative; }
-.about-photo {
-  width: 100%; aspect-ratio: 3/4; border-radius: 20px;
-  background: var(--sand); border: 1px solid var(--line);
+.about-left {}
+.about-avatar {
+  width: 100%; aspect-ratio: 3/4; border-radius: 16px;
+  background: var(--off); border: 1px solid var(--line);
   display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
+  font-size: 72px; font-weight: 700; color: var(--ink3);
+  letter-spacing: -0.04em;
 }
-.about-monogram {
-  font-family: 'Fraunces', serif;
-  font-size: 72px; font-weight: 700; color: var(--rust);
-  opacity: 0.4; letter-spacing: -0.04em; user-select: none;
-}
-.about-photo-badge {
-  position: absolute; bottom: -16px; right: -16px;
-  background: var(--rust); color: var(--white);
-  border-radius: 14px; padding: 14px 18px;
-  border: 3px solid var(--cream);
-  text-align: center; box-shadow: 0 4px 20px rgba(196,98,45,0.3);
-}
-.badge-num {
-  font-family: 'Fraunces', serif;
-  font-size: 26px; font-weight: 700; line-height: 1; display: block;
-}
-.badge-lbl { font-size: 10px; font-weight: 600; opacity: 0.8; letter-spacing: 0.04em; text-transform: uppercase; }
-
-.about-right { padding-top: 12px; }
+.about-right {}
 .about-name {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(26px, 3vw, 40px); font-weight: 700;
-  letter-spacing: -0.04em; color: var(--ink); margin-bottom: 4px;
+  font-size: clamp(28px, 3vw, 40px); font-weight: 700;
+  letter-spacing: -0.03em; margin-bottom: 4px;
 }
 .about-role {
-  font-size: 15px; color: var(--rust); font-weight: 400;
-  font-family: 'Fraunces', serif; font-style: italic; margin-bottom: 24px;
+  font-size: 16px; color: var(--ink3); margin-bottom: 28px;
+  font-family: 'Lora', serif; font-style: italic;
 }
 .about-body {
   font-size: 15px; color: var(--ink2); line-height: 1.8;
-  margin-bottom: 28px; font-weight: 300;
+  margin-bottom: 32px; font-weight: 300;
 }
 .about-body strong { color: var(--ink); font-weight: 600; }
-.creds { display: flex; flex-direction: column; gap: 10px; }
-.cred { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink2); }
-.cred-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rust); flex-shrink: 0; }
 
-/* ── PROOF ── */
-.proof-sec {
-  background: var(--ink); padding: 96px 52px;
+.creds { display: flex; flex-direction: column; gap: 10px; }
+.cred {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 13px; color: var(--ink2);
 }
-.proof-inner-wrap {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+.cred-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0;
 }
-.proof-q {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(22px, 2.8vw, 36px);
-  font-style: italic; font-weight: 400;
-  color: rgba(255,255,255,0.85); line-height: 1.45;
-  margin-bottom: 16px;
+
+/* ── PROOF QUOTE ── */
+.proof-wrap {
+  background: var(--ink); border-radius: 20px;
+  padding: 64px; text-align: center;
 }
-.proof-q em { font-style: normal; color: #e8956b; }
+.proof-quote {
+  font-family: 'Lora', serif;
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-style: italic; color: var(--white);
+  line-height: 1.5; margin-bottom: 20px; font-weight: 400;
+}
+.proof-quote em { font-style: normal; color: #93aff5; }
 .proof-attr {
-  font-size: 12px; color: rgba(255,255,255,0.3);
-  letter-spacing: 0.06em; text-transform: uppercase;
+  font-size: 12px; color: rgba(255,255,255,0.4);
+  letter-spacing: 0.05em; text-transform: uppercase;
+  margin-bottom: 48px;
 }
-.proof-right { display: flex; flex-direction: column; gap: 2px; }
-.pn-row {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px; padding: 20px 24px;
-  display: flex; justify-content: space-between; align-items: center;
+.proof-nums {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r); overflow: hidden;
 }
-.pn-lbl { font-size: 12px; color: rgba(255,255,255,0.4); }
-.pn-val {
-  font-family: 'Fraunces', serif;
-  font-size: 24px; font-weight: 700;
+.proof-num-cell {
+  padding: 24px; background: rgba(255,255,255,0.04);
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.proof-num-cell:last-child { border-right: none; }
+.proof-big {
+  font-size: 28px; font-weight: 700;
   color: var(--white); letter-spacing: -0.03em;
+  display: block; line-height: 1;
+}
+.proof-lbl {
+  font-size: 11px; color: rgba(255,255,255,0.4);
+  display: block; margin-top: 4px;
 }
 
 /* ── FINAL CTA ── */
-.fcta {
-  padding: 96px 52px; text-align: center;
-  max-width: 1200px; margin: 0 auto;
+.fcta-wrap {
+  background: var(--off); border-radius: 20px;
+  padding: 80px 60px; text-align: center;
+  border: 1px solid var(--line);
 }
-.fcta-box { max-width: 560px; margin: 0 auto; }
-.fcta-box h2 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(28px, 4vw, 54px); font-weight: 700;
-  letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 16px;
+.fcta-wrap h2 {
+  font-size: clamp(28px, 4vw, 52px); font-weight: 700;
+  letter-spacing: -0.03em; margin-bottom: 16px; line-height: 1.1;
 }
-.fcta-box h2 em { font-style: italic; color: var(--rust); }
-.fcta-box p { font-size: 16px; color: var(--ink3); line-height: 1.7; margin-bottom: 36px; font-weight: 300; }
+.fcta-wrap p {
+  font-size: 16px; color: var(--ink2); max-width: 460px;
+  margin: 0 auto 36px; line-height: 1.7; font-weight: 300;
+}
 
 /* ── FOOTER ── */
 footer {
-  background: var(--cream2);
   border-top: 1px solid var(--line);
-  padding: 32px 52px;
+  padding: 32px 60px;
   display: flex; justify-content: space-between;
   align-items: center; flex-wrap: wrap; gap: 16px;
+  max-width: 1280px; margin: 0 auto;
 }
-.footer-logo {
-  font-family: 'Fraunces', serif;
-  font-size: 16px; font-weight: 700; color: var(--ink);
-  text-decoration: none;
-}
-.footer-logo span { color: var(--rust); }
+.footer-logo { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+.footer-logo span { color: var(--accent); }
 .footer-links { display: flex; gap: 28px; }
-.footer-links a { font-size: 13px; color: var(--ink3); text-decoration: none; transition: color 0.2s; }
+.footer-links a {
+  font-size: 13px; color: var(--ink3); text-decoration: none; transition: color 0.2s;
+}
 .footer-links a:hover { color: var(--ink); }
 .footer-copy { font-size: 12px; color: var(--ink3); }
 
 /* ── MODAL ── */
 .modal-ov {
   position: fixed; inset: 0; z-index: 500;
-  background: rgba(26,22,18,0.55); backdrop-filter: blur(8px);
-  display: flex; align-items: center; justify-content: center; padding: 20px;
-  opacity: 0; visibility: hidden; transition: all 0.25s;
+  background: rgba(15,15,15,0.5);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.25s, visibility 0.25s;
 }
 .modal-ov.open { opacity: 1; visibility: visible; }
+
 .modal-box {
-  background: var(--cream); border-radius: 20px;
-  padding: 44px; max-width: 460px; width: 100%;
-  position: relative; border: 1px solid var(--line);
-  transform: translateY(16px) scale(0.98); transition: transform 0.25s;
+  background: var(--white); border-radius: 20px;
+  padding: 48px; max-width: 480px; width: 100%;
+  position: relative;
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.25s;
+  border: 1px solid var(--line);
   max-height: 90vh; overflow-y: auto;
 }
-.modal-ov.open .modal-box { transform: none; }
+.modal-ov.open .modal-box { transform: translateY(0) scale(1); }
+
 .modal-close {
-  position: absolute; top: 14px; right: 16px;
-  background: var(--cream2); border: none; border-radius: 50%;
-  width: 30px; height: 30px; cursor: pointer; font-size: 14px;
-  color: var(--ink2); display: flex; align-items: center; justify-content: center;
+  position: absolute; top: 16px; right: 18px;
+  background: var(--off); border: none; border-radius: 50%;
+  width: 32px; height: 32px; font-size: 16px;
+  cursor: pointer; color: var(--ink2);
+  display: flex; align-items: center; justify-content: center;
   transition: background 0.2s;
 }
-.modal-close:hover { background: var(--sand); }
-.modal-tag { font-size: 11px; font-weight: 700; color: var(--rust); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
-.modal-box h3 { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 6px; }
-.modal-box > p { font-size: 13px; color: var(--ink3); margin-bottom: 24px; line-height: 1.6; }
+.modal-close:hover { background: var(--line); }
+
+.modal-tag {
+  font-size: 11px; font-weight: 500; color: var(--accent);
+  letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;
+}
+.modal-box h3 {
+  font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.modal-box > p {
+  font-size: 14px; color: var(--ink3); margin-bottom: 28px; line-height: 1.6;
+}
+
 .fg { margin-bottom: 14px; }
-.fg label { font-size: 10px; font-weight: 700; color: var(--ink2); letter-spacing: 0.06em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+.fg label {
+  font-size: 11px; font-weight: 600; color: var(--ink2);
+  letter-spacing: 0.04em; text-transform: uppercase;
+  display: block; margin-bottom: 6px;
+}
 .fg input, .fg select, .fg textarea {
   width: 100%; border: 1px solid var(--line); border-radius: var(--r);
-  padding: 11px 14px; font-family: 'Figtree', sans-serif;
+  padding: 11px 14px; font-family: 'Sora', sans-serif;
   font-size: 14px; color: var(--ink); background: var(--white);
   outline: none; transition: border-color 0.2s;
+  font-weight: 300;
 }
-.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--rust); }
-.fg textarea { resize: vertical; min-height: 72px; }
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+  border-color: var(--accent);
+}
+.fg select { cursor: pointer; }
+.fg textarea { resize: vertical; min-height: 80px; }
+
 .modal-submit {
-  width: 100%; margin-top: 4px;
-  background: var(--rust); color: var(--white);
+  width: 100%; margin-top: 6px;
+  background: var(--ink); color: var(--white);
   border: none; border-radius: 100px;
-  font-family: 'Figtree', sans-serif;
-  font-size: 14px; font-weight: 600;
-  padding: 15px; cursor: pointer; letter-spacing: -0.01em;
+  font-family: 'Sora', sans-serif;
+  font-size: 14px; font-weight: 500;
+  padding: 15px; cursor: pointer;
+  letter-spacing: -0.01em;
   transition: background 0.2s, transform 0.15s;
 }
-.modal-submit:hover { background: var(--rust2); transform: translateY(-1px); }
-.modal-note { font-size: 11px; color: var(--ink3); text-align: center; margin-top: 10px; }
+.modal-submit:hover { background: var(--accent); transform: translateY(-1px); }
+.modal-note {
+  font-size: 11px; color: var(--ink3);
+  text-align: center; margin-top: 12px;
+}
 
-/* Reveal */
-.r { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+/* ── SCROLL REVEAL ── */
+.r { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .r.on { opacity: 1; transform: none; }
-.r.d1 { transition-delay: 0.1s; } .r.d2 { transition-delay: 0.2s; } .r.d3 { transition-delay: 0.3s; }
+.r.d1 { transition-delay: 0.08s; }
+.r.d2 { transition-delay: 0.16s; }
+.r.d3 { transition-delay: 0.24s; }
+.r.d4 { transition-delay: 0.32s; }
 
 /* ── MOBILE ── */
 @media (max-width: 900px) {
+
+  /* Nav */
   nav { padding: 0 20px; height: 60px; }
-  .nav-links, .nav-btn { display: none; }
+  .nav-links { display: none; }
+  .nav-btn { display: none; }
   .nav-mobile-btn {
-    display: block; font-size: 13px; font-weight: 600;
-    background: var(--rust); color: var(--white);
-    padding: 9px 18px; border-radius: 100px; text-decoration: none;
+    display: block;
+    font-size: 13px; font-weight: 500;
+    background: var(--ink); color: var(--white);
+    padding: 9px 18px; border-radius: 100px;
+    text-decoration: none; letter-spacing: -0.01em;
   }
-  .hero { grid-template-columns: 1fr; padding: 96px 20px 56px; gap: 40px; }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 90px 20px 52px;
+    gap: 36px;
+  }
   .hero-h1 { font-size: 36px; }
   .hero-p { font-size: 15px; }
-  .hero-btns { flex-direction: column; }
-  .btn-rust, .btn-ghost { text-align: center; width: 100%; }
-  .trust { padding: 20px; }
-  .trust-inner { flex-direction: column; gap: 10px; }
-  .sec { padding: 56px 20px; }
-  .sec-full .si { padding: 0 20px; }
-  .proc-wrap { grid-template-columns: 1fr; gap: 36px; }
-  .prob-grid { grid-template-columns: 1fr; gap: 12px; }
-  .pkg-grid { grid-template-columns: 1fr; gap: 12px; }
-  .about-wrap { grid-template-columns: 1fr; gap: 48px; }
-  .about-photo { aspect-ratio: 4/3; }
-  .about-photo-badge { right: 8px; bottom: -12px; }
-  .proof-sec { padding: 56px 20px; }
-  .proof-inner-wrap { grid-template-columns: 1fr; gap: 40px; }
-  .fcta { padding: 56px 20px; }
-  .fcta-box h2 { font-size: 30px; }
-  footer { padding: 24px 20px; flex-direction: column; text-align: center; }
-  .footer-links { justify-content: center; }
-  .modal-box { padding: 28px 20px; }
+  .hero-actions { flex-direction: column; gap: 10px; }
+  .btn-fill, .btn-ghost { text-align: center; width: 100%; }
+  .hero-card { padding: 24px 20px; }
+  .hero-stat-grid { grid-template-columns: 1fr 1fr; }
+  .hero-stat { padding: 16px 14px; }
+  .hero-stat-num { font-size: 20px; }
+
+  /* Trust bar */
+  .trust-bar { padding: 20px; }
+  .trust-inner { flex-direction: column; gap: 12px; }
+  .trust-firms { gap: 20px; }
+  .trust-firm { font-size: 13px; }
+
+  /* Sections */
+  .section { padding: 52px 20px; }
+  .section-full .section-inner { padding: 0 20px; }
+
+  /* Problem */
+  .problem-list { grid-template-columns: 1fr; border-radius: var(--r); }
+  .prob { border-right: none; border-bottom: 1px solid var(--line); padding: 28px 20px; }
+  .prob:last-child { border-bottom: none; }
+
+  /* How it works — fix the two-column grid */
+  #how > div { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .sh { margin-bottom: 0; }
+  .step-row { padding: 24px 0; grid-template-columns: 40px 1fr; gap: 16px; }
+  .step-n { font-size: 12px; padding-top: 2px; }
+  .step-title { font-size: 15px; }
+  .step-body { font-size: 13px; }
+
+  /* Packages */
+  .pkg-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 36px; }
+  .pkg-card { padding: 28px 20px; }
+  .pop-badge { left: 20px; }
+
+  /* About */
+  .about-wrap { grid-template-columns: 1fr; gap: 28px; }
+  .about-avatar { aspect-ratio: 16/9; font-size: 40px; border-radius: 12px; }
+  .about-name { font-size: 28px; }
+  .about-body { font-size: 14px; }
+
+  /* Proof */
+  .proof-wrap { padding: 36px 20px; border-radius: 14px; }
+  .proof-quote { font-size: 18px; }
+  .proof-nums { grid-template-columns: 1fr; }
+  .proof-num-cell {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 20px;
+  }
+  .proof-num-cell:last-child { border-bottom: none; }
+  .proof-big { font-size: 24px; }
+
+  /* CTA */
+  .fcta-wrap { padding: 44px 20px; border-radius: 14px; }
+  .fcta-wrap h2 { font-size: 28px; }
+  .fcta-wrap p { font-size: 14px; }
+  .btn-fill { padding: 14px 24px; font-size: 14px; }
+
+  /* Modal */
+  .modal-box { padding: 28px 20px; border-radius: 16px; }
+  .modal-box h3 { font-size: 20px; }
+
+  /* Footer */
+  footer {
+    padding: 24px 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .footer-links { justify-content: center; flex-wrap: wrap; gap: 20px; }
+
+  /* Section headings */
+  .sh-h2 { font-size: 28px; }
+  .sh-p { font-size: 14px; }
 }
-@media (max-width: 420px) {
+
+/* Extra small screens */
+@media (max-width: 380px) {
+  .hero-stat-grid { grid-template-columns: 1fr; }
+  .hero-stat:nth-child(2) { border-right: 1px solid var(--line); }
+  .hero-stat { border-right: none !important; }
   .hero-h1 { font-size: 30px; }
-  .hero-sig { flex-direction: column; align-items: flex-start; }
+  .trust-firms { gap: 12px; }
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo">Harsh<span>.</span></a>
+  <a href="#" class="nav-logo">Harsh<span>Kaklotar</span></a>
   <div class="nav-links">
     <a href="#how">How it works</a>
     <a href="#packages">Services</a>
@@ -527,44 +663,49 @@ footer {
 
 <!-- HERO -->
 <div class="hero">
-  <div>
-    <div class="hero-eyebrow r">LinkedIn Branding for US CPAs</div>
-    <h1 class="hero-h1 r d1">Your clients are<br>looking for you.<br><em>They just can't find you.</em></h1>
-    <p class="hero-p r d2">I help US CPA professionals build a LinkedIn presence that attracts premium clients — fully managed, done for you, without writing a single word.</p>
-    <div class="hero-btns r d3">
-      <a href="#" class="btn-rust" onclick="openModal(event)">Book a Free Strategy Call</a>
+  <div class="hero-left">
+    <div class="hero-tag r">LinkedIn Branding · US CPA Professionals</div>
+    <h1 class="hero-h1 r d1">
+      Your next client<br>is already on<br><em>LinkedIn.</em>
+    </h1>
+    <p class="hero-p r d2">
+      I help US CPA professionals build a LinkedIn presence that attracts premium clients — fully managed, done for you, without writing a single word.
+    </p>
+    <div class="hero-actions r d3">
+      <a href="#" class="btn-fill" onclick="openModal(event)">Book a Free Strategy Call</a>
       <a href="#packages" class="btn-ghost">View Services</a>
     </div>
-    <div class="hero-sig r d3">
-      <div class="sig-avatar">HK</div>
-      <div class="sig-text">
-        <strong>Harsh Kaklotar</strong>
-        CA Finalist · 4 Years US Accounting Experience
-      </div>
-    </div>
   </div>
-  <div class="r d2">
+  <div class="hero-right r d2">
     <div class="hero-card">
-      <div class="card-header">
-        <div class="card-dots"><div class="cd cd1"></div><div class="cd cd2"></div><div class="cd cd3"></div></div>
-        <span class="card-title">linkedin_analytics.json · Verified</span>
-      </div>
-      <div class="card-body">
-        <div class="card-label">My own profile · Last 90 days</div>
-        <div class="stat-list">
-          <div class="stat-row"><span class="stat-row-label">Total impressions</span><span class="stat-row-val" data-key="impressions">—</span></div>
-          <div class="stat-row"><span class="stat-row-label">Professionals reached</span><span class="stat-row-val" data-key="reached">—</span></div>
-          <div class="stat-row"><span class="stat-row-label">Followers gained</span><span class="stat-row-val" data-key="followers">—</span></div>
-          <div class="stat-row"><span class="stat-row-label">Best single post</span><span class="stat-row-val" data-key="topPost">—</span></div>
+      <div class="hero-card-label">My own LinkedIn · Verified results</div>
+      <div class="hero-stat-grid">
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-key="impressions">—</span>
+          <span class="hero-stat-lbl">Total impressions</span>
         </div>
-        <div class="card-note"><strong>Big 4 watching:</strong> KPMG, Deloitte & EY professionals are in my audience — at 306 followers. Achieved in under 30 days of posting.</div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-key="reached">—</span>
+          <span class="hero-stat-lbl">Professionals reached</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-key="followers">—</span>
+          <span class="hero-stat-lbl">Followers gained</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-key="topPost">—</span>
+          <span class="hero-stat-lbl">Best post impressions</span>
+        </div>
       </div>
+      <p class="hero-firms">
+        <strong>Big 4 firms already in my audience</strong> — KPMG, Deloitte, and EY professionals are watching. Achieved in under 30 days of posting.
+      </p>
     </div>
   </div>
 </div>
 
-<!-- TRUST -->
-<div class="trust">
+<!-- TRUST BAR -->
+<div class="trust-bar">
   <div class="trust-inner">
     <span class="trust-label">Audience includes professionals from</span>
     <div class="trust-firms">
@@ -577,67 +718,185 @@ footer {
   </div>
 </div>
 
+<hr class="divider">
+
 <!-- PROBLEM -->
-<section class="sec" id="problem">
-  <span class="stag r">The Problem</span>
-  <h2 class="sh2 r">Most CPAs are exceptional.<br><em>Completely invisible online.</em></h2>
-  <p class="sp r">You built your practice on expertise and referrals. But that's no longer enough.</p>
-  <div class="prob-grid">
-    <div class="prob-card r"><span class="prob-icon">📨</span><div class="prob-title">Referral dependency</div><div class="prob-body">One slow quarter and revenue drops. You have no predictable inbound channel outside your existing network.</div></div>
-    <div class="prob-card r d1"><span class="prob-icon">👤</span><div class="prob-title">Invisible expertise</div><div class="prob-body">You know tax strategy, advisory, M&A — but nobody outside your current clients knows it exists.</div></div>
-    <div class="prob-card r d2"><span class="prob-icon">📈</span><div class="prob-title">The authority gap</div><div class="prob-body">A CPA posting twice a week on LinkedIn is pulling CFO inquiries every month from companies you'd never get referred to.</div></div>
-    <div class="prob-card r d3"><span class="prob-icon">⏱</span><div class="prob-title">No time to fix it</div><div class="prob-body">Every hour on content is an hour not billing. The trap compounds — and most CPAs never escape it alone.</div></div>
+<div class="section" id="problem">
+  <div class="sh r">
+    <span class="sh-tag">The Problem</span>
+    <h2 class="sh-h2">Most CPAs are exceptional<br><em>at their work. Invisible online.</em></h2>
+    <p class="sh-p">You have the expertise. You don't have the audience. Here's why that gap is costing you.</p>
   </div>
-</section>
+  <div class="problem-list">
+    <div class="prob r">
+      <div class="prob-icon">📨</div>
+      <div class="prob-title">Referral dependency</div>
+      <div class="prob-body">Your best clients came from word-of-mouth years ago. One slow quarter and revenue drops. No predictable inbound channel exists.</div>
+    </div>
+    <div class="prob r d1">
+      <div class="prob-icon">👤</div>
+      <div class="prob-title">Invisible expertise</div>
+      <div class="prob-body">You know tax strategy, advisory, M&A — but nobody outside your current network knows it. Your expertise exists. Your audience doesn't.</div>
+    </div>
+    <div class="prob r d2">
+      <div class="prob-icon">📈</div>
+      <div class="prob-title">The authority gap</div>
+      <div class="prob-body">A CPA posting twice a week on LinkedIn pulls in CFO inquiries every month. Clients pay more to the expert they can find — not the best one in the room.</div>
+    </div>
+    <div class="prob r d3">
+      <div class="prob-icon">⏱</div>
+      <div class="prob-title">No time to build it</div>
+      <div class="prob-body">Every hour spent on content is an hour not billing. The trap compounds — and most CPAs never find a way out of it on their own.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
 
 <!-- HOW IT WORKS -->
-<div class="sec-full sec-bg" id="how">
-  <div class="si">
-    <div class="proc-wrap">
-      <div>
-        <span class="stag r">How It Works</span>
-        <h2 class="sh2 r">Done for you.<br><em>Every single step.</em></h2>
-        <p class="sp r">You focus on your clients. I handle everything else — from strategy to publishing to outreach.</p>
+<div class="section" id="how">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+    <div class="sh r" style="margin-bottom:0;">
+      <span class="sh-tag">How It Works</span>
+      <h2 class="sh-h2">Done for you.<br><em>Start to finish.</em></h2>
+      <p class="sh-p">You focus on your clients. I handle everything else — strategy, writing, publishing, and outreach.</p>
+    </div>
+    <div class="process-list">
+      <div class="step-row r">
+        <div class="step-n">01</div>
+        <div class="step-content">
+          <div class="step-title">Niche & voice discovery</div>
+          <div class="step-body">One 60-minute call. I learn your speciality, the clients you want to attract, and how you naturally communicate. Everything documented before we write a word.</div>
+        </div>
       </div>
-      <div class="proc-steps">
-        <div class="proc-step r"><div class="proc-n">01</div><div><div class="proc-title">Niche & voice discovery</div><div class="proc-body">One 60-minute call. I learn your speciality, target clients, and how you naturally communicate. Everything documented before we write a word.</div></div></div>
-        <div class="proc-step r d1"><div class="proc-n">02</div><div><div class="proc-title">Content system build</div><div class="proc-body">Full content calendar, every post written around your real expertise, publishing managed. You review — nothing goes live without your sign-off.</div></div></div>
-        <div class="proc-step r d2"><div class="proc-n">03</div><div><div class="proc-title">Visibility expansion</div><div class="proc-body">Strategic engagement on ideal client posts, targeted connection outreach to US business owners and CFOs.</div></div></div>
-        <div class="proc-step r d3"><div class="proc-n">04</div><div><div class="proc-title">Monthly results reporting</div><div class="proc-body">Clear monthly reports tracking impressions, follower growth, and conversations started — so you see what your LinkedIn is producing.</div></div></div>
+      <div class="step-row r d1">
+        <div class="step-n">02</div>
+        <div class="step-content">
+          <div class="step-title">Content system build</div>
+          <div class="step-body">I build your full content calendar, write every post around your real expertise, and manage your publishing schedule. You review and approve — nothing goes live without your sign-off.</div>
+        </div>
+      </div>
+      <div class="step-row r d2">
+        <div class="step-n">03</div>
+        <div class="step-content">
+          <div class="step-title">Visibility expansion</div>
+          <div class="step-body">Strategic engagement on ideal client posts, targeted connection outreach to US business owners and CFOs, and profile optimization that converts visitors into inquiries.</div>
+        </div>
+      </div>
+      <div class="step-row r d3">
+        <div class="step-n">04</div>
+        <div class="step-content">
+          <div class="step-title">Monthly results reporting</div>
+          <div class="step-body">Clear monthly reports tracking impressions, follower growth, and conversations started. You see exactly what's working and what your LinkedIn is producing.</div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<hr class="divider">
+
 <!-- PACKAGES -->
-<section class="sec" id="packages">
-  <span class="stag r">Services</span>
-  <h2 class="sh2 r">Choose your level<br><em>of visibility.</em></h2>
-  <p class="sp r">All engagements minimum 3 months. Pricing shared on your strategy call.</p>
-  <div class="pkg-grid">
-    <div class="pkg-card r"><div class="pkg-tier">Tier 01</div><div class="pkg-name">Starter</div><div class="pkg-sub">Consistent presence, zero effort</div><hr class="pkg-sep"><ul class="pkg-feats"><li>Full LinkedIn profile overhaul</li><li>8 posts per month</li><li>Headline, banner & about rewrite</li><li>Monthly strategy call</li><li>Hook & hashtag strategy</li><li>End-of-month analytics report</li></ul><a href="#" class="pkg-cta-a" onclick="openModal(event)">Get Pricing</a><div class="pkg-terms">3 · 6 · 12 month terms</div></div>
-    <div class="pkg-card pop r d1"><div class="pop-badge">Most Popular</div><div class="pkg-tier">Tier 02</div><div class="pkg-name">Authority</div><div class="pkg-sub">Become the go-to CPA in your niche</div><hr class="pkg-sep"><ul class="pkg-feats"><li>Everything in Starter</li><li>16 posts per month</li><li>Daily engagement management</li><li>ICP-targeted connection outreach</li><li>Weekly strategy call</li><li>Banner & headline A/B refresh</li><li>Monthly performance report</li></ul><a href="#" class="pkg-cta-a" onclick="openModal(event)">Get Pricing</a><div class="pkg-terms">3 · 6 · 12 month terms</div></div>
-    <div class="pkg-card r d2"><div class="pkg-tier">Tier 03</div><div class="pkg-name">Rainmaker</div><div class="pkg-sub">Full content + outbound system</div><hr class="pkg-sep"><ul class="pkg-feats"><li>Everything in Authority</li><li>20 posts per month</li><li>DM outreach to CFOs & owners</li><li>Lead pipeline tracking</li><li>Newsletter ghostwriting (2/mo)</li><li>Speaking opportunity prep</li><li>Quarterly brand audit</li></ul><a href="#" class="pkg-cta-a" onclick="openModal(event)">Get Pricing</a><div class="pkg-terms">3 · 6 · 12 month terms</div></div>
-    <div class="pkg-card r d3"><div class="pkg-tier">Tier 04</div><div class="pkg-name">Empire</div><div class="pkg-sub">National reputation, full management</div><hr class="pkg-sep"><ul class="pkg-feats"><li>Everything in Rainmaker</li><li>Podcast & media pitching</li><li>LinkedIn + newsletter managed</li><li>Direct strategist access</li><li>Monthly ROI attribution</li><li>New service launch support</li><li>Quarterly competitor analysis</li></ul><a href="#" class="pkg-cta-a" onclick="openModal(event)">Get Pricing</a><div class="pkg-terms">3 · 6 · 12 month terms</div></div>
+<div class="section" id="packages">
+  <div class="sh r" style="max-width:600px;">
+    <span class="sh-tag">Services</span>
+    <h2 class="sh-h2">Choose your<br><em>level of visibility.</em></h2>
+    <p class="sh-p">All engagements are minimum 3 months. Real LinkedIn results compound — month 1 plants the seed, month 3 is when inbound starts. Pricing shared on your strategy call.</p>
   </div>
-</section>
+  <div class="pkg-grid">
+
+    <div class="pkg-card r">
+      <div class="pkg-tier">Tier 01</div>
+      <div class="pkg-name">Starter</div>
+      <div class="pkg-tagline">Consistent presence, zero effort</div>
+      <hr class="pkg-sep">
+      <ul class="pkg-feats">
+        <li>Full LinkedIn profile overhaul</li>
+        <li>8 posts per month</li>
+        <li>Headline, banner & about rewrite</li>
+        <li>Monthly strategy call</li>
+        <li>Hook & hashtag strategy</li>
+        <li>End-of-month analytics report</li>
+      </ul>
+      <a href="#" class="pkg-cta-btn" onclick="openModal(event)">Get Pricing</a>
+      <div class="pkg-terms">3 · 6 · 12 month terms available</div>
+    </div>
+
+    <div class="pkg-card pop r d1">
+      <div class="pop-badge">Most Popular</div>
+      <div class="pkg-tier">Tier 02</div>
+      <div class="pkg-name">Authority</div>
+      <div class="pkg-tagline">Become the go-to CPA in your niche</div>
+      <hr class="pkg-sep">
+      <ul class="pkg-feats">
+        <li>Everything in Starter</li>
+        <li>16 posts per month</li>
+        <li>Daily engagement management</li>
+        <li>ICP-targeted connection outreach</li>
+        <li>Weekly strategy call</li>
+        <li>Banner & headline A/B refresh</li>
+        <li>Monthly performance report</li>
+      </ul>
+      <a href="#" class="pkg-cta-btn" onclick="openModal(event)">Get Pricing</a>
+      <div class="pkg-terms">3 · 6 · 12 month terms available</div>
+    </div>
+
+    <div class="pkg-card r d2">
+      <div class="pkg-tier">Tier 03</div>
+      <div class="pkg-name">Rainmaker</div>
+      <div class="pkg-tagline">Full content + outbound system</div>
+      <hr class="pkg-sep">
+      <ul class="pkg-feats">
+        <li>Everything in Authority</li>
+        <li>20 posts per month</li>
+        <li>DM outreach to CFOs & owners</li>
+        <li>Lead pipeline tracking</li>
+        <li>Newsletter ghostwriting (2/mo)</li>
+        <li>Speaking opportunity prep</li>
+        <li>Quarterly brand audit</li>
+      </ul>
+      <a href="#" class="pkg-cta-btn" onclick="openModal(event)">Get Pricing</a>
+      <div class="pkg-terms">3 · 6 · 12 month terms available</div>
+    </div>
+
+    <div class="pkg-card r d3">
+      <div class="pkg-tier">Tier 04</div>
+      <div class="pkg-name">Empire</div>
+      <div class="pkg-tagline">National reputation, full brand management</div>
+      <hr class="pkg-sep">
+      <ul class="pkg-feats">
+        <li>Everything in Rainmaker</li>
+        <li>Podcast & media pitching</li>
+        <li>LinkedIn + newsletter managed</li>
+        <li>Direct strategist access</li>
+        <li>Monthly ROI attribution</li>
+        <li>New service launch support</li>
+        <li>Quarterly competitor analysis</li>
+      </ul>
+      <a href="#" class="pkg-cta-btn" onclick="openModal(event)">Get Pricing</a>
+      <div class="pkg-terms">3 · 6 · 12 month terms available</div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
 
 <!-- ABOUT -->
-<div class="sec-full sec-bg" id="about">
-  <div class="si">
-    <div class="about-wrap">
-      <div class="about-photo-wrap r">
-        <div class="about-photo"><div class="about-monogram">HK</div></div>
-        <div class="about-photo-badge">
-          <span class="badge-num">4+</span>
-          <span class="badge-lbl">Years US<br>Accounting</span>
-        </div>
-      </div>
-      <div class="about-right">
-        <span class="stag r">About</span>
+<div class="section" id="about">
+  <div class="about-wrap">
+    <div class="about-left r">
+      <div class="about-avatar">HK</div>
+    </div>
+    <div class="about-right">
+      <div class="sh" style="margin-bottom:0;">
+        <span class="sh-tag r">About</span>
         <div class="about-name r d1">Harsh Kaklotar</div>
-        <div class="about-role r d1">LinkedIn Strategist for US CPA Professionals</div>
-        <p class="about-body r d2">I'm a <strong>CA Finalist with 4 years of US accounting experience</strong> — which means I understand your work at a level most marketers never will. I know tax advisory, client onboarding, billing structures, and the language CPAs use with their clients.<br><br>Every post I write for you is grounded in real accounting knowledge. Your audience feels the difference immediately — because the content sounds like someone who actually knows the profession.</p>
+        <div class="about-role r d1">LinkedIn Strategist · US CPA Professionals</div>
+        <p class="about-body r d2">
+          I'm a <strong>CA Finalist with 4 years of US accounting experience</strong> — which means I understand your work at a level most marketers never will.<br><br>
+          I know tax advisory, client onboarding, billing structures, and the language CPAs use with their clients. That expertise shapes every post I write for you. Your audience feels the difference immediately — because the content actually sounds like someone who knows the profession.
+        </p>
         <div class="creds r d3">
           <div class="cred"><div class="cred-dot"></div>CA Finalist — ICAI</div>
           <div class="cred"><div class="cred-dot"></div>QuickBooks ProAdvisor Certified</div>
@@ -649,30 +908,44 @@ footer {
   </div>
 </div>
 
+<hr class="divider">
+
 <!-- PROOF -->
-<div class="proof-sec">
-  <div class="proof-inner-wrap">
-    <div>
-      <p class="proof-q r">"Before managing your LinkedIn, I built my own — <em>29,779 impressions, 306 followers, Big 4 firms watching</em> — in under 30 days of consistent posting."</p>
-      <p class="proof-attr r">Harsh Kaklotar · Own LinkedIn Profile · Verified Analytics</p>
-    </div>
-    <div class="proof-right r">
-      <div class="pn-row"><span class="pn-lbl">Best post impressions</span><span class="pn-val" data-key="topPost">—</span></div>
-      <div class="pn-row"><span class="pn-lbl">Professionals reached</span><span class="pn-val" data-key="reached">—</span></div>
-      <div class="pn-row"><span class="pn-lbl">Audience in accounting</span><span class="pn-val">54.7%</span></div>
+<div class="section">
+  <div class="proof-wrap r">
+    <p class="proof-quote">
+      "Before managing your LinkedIn, I built my own —
+      <em>29,779 impressions, 306 followers, Big 4 firms watching</em>
+      — in under 30 days of consistent posting."
+    </p>
+    <p class="proof-attr">Harsh Kaklotar · Own LinkedIn profile · Verified analytics</p>
+    <div class="proof-nums">
+      <div class="proof-num-cell">
+        <span class="proof-big" data-key="topPost">—</span>
+        <span class="proof-lbl">Best single post impressions</span>
+      </div>
+      <div class="proof-num-cell">
+        <span class="proof-big" data-key="reached">—</span>
+        <span class="proof-lbl">Unique professionals reached</span>
+      </div>
+      <div class="proof-num-cell">
+        <span class="proof-big">54.7%</span>
+        <span class="proof-lbl">Audience in accounting industry</span>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- FINAL CTA -->
-<div class="fcta">
-  <div class="fcta-box">
-    <h2 class="r">Your next client is already<br><em>on LinkedIn.</em></h2>
-    <p class="r">Book a free 20-minute strategy call. No pitch, no pressure — just a clear picture of what your LinkedIn could look like in 90 days.</p>
-    <a href="#" class="btn-rust r" onclick="openModal(event)" style="display:inline-block;">Book Your Free Strategy Call</a>
+<div class="section">
+  <div class="fcta-wrap r">
+    <h2>Ready to become<br>the CPA clients find?</h2>
+    <p>Book a free 20-minute strategy call. No pitch, no pressure — just a clear picture of what your LinkedIn could look like in 90 days.</p>
+    <a href="#" class="btn-fill" onclick="openModal(event)" style="display:inline-block;">Book Your Free Strategy Call</a>
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <a href="#" class="footer-logo">Harsh<span>Kaklotar</span>.me</a>
   <div class="footer-links">
@@ -684,32 +957,82 @@ footer {
 </footer>
 
 <!-- MODAL -->
-<div class="modal-ov" id="modalOv" onclick="handleOv(event)">
+<div class="modal-ov" id="modalOv" onclick="handleOvClick(event)">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
     <div class="modal-tag">Free Strategy Call</div>
     <h3>Let's talk about your LinkedIn</h3>
-    <p>Fill this out and I'll get back to you within 24 hours.</p>
-    <div class="fg"><label>Full Name</label><input type="text" id="fn" placeholder="John Smith, CPA"></div>
-    <div class="fg"><label>Email Address</label><input type="email" id="fe" placeholder="john@smithcpa.com"></div>
-    <div class="fg"><label>LinkedIn URL</label><input type="url" id="fl" placeholder="linkedin.com/in/johnsmith"></div>
-    <div class="fg"><label>Your Specialty</label><select id="fs"><option value="">Select your niche...</option><option>Tax Advisory</option><option>Bookkeeping & Accounting</option><option>CFO Services</option><option>Audit & Assurance</option><option>Business Consulting</option><option>Other</option></select></div>
-    <div class="fg"><label>Biggest LinkedIn challenge? (optional)</label><textarea id="fm" placeholder="e.g. I tried posting but nothing happened..."></textarea></div>
+    <p>Fill this out and I'll get back to you within 24 hours to schedule your free 20-minute call.</p>
+    <div class="fg">
+      <label>Full Name</label>
+      <input type="text" id="fn" placeholder="John Smith, CPA">
+    </div>
+    <div class="fg">
+      <label>Email Address</label>
+      <input type="email" id="fe" placeholder="john@smithcpa.com">
+    </div>
+    <div class="fg">
+      <label>LinkedIn Profile URL</label>
+      <input type="url" id="fl" placeholder="linkedin.com/in/johnsmith">
+    </div>
+    <div class="fg">
+      <label>Your Specialty</label>
+      <select id="fs">
+        <option value="">Select your niche...</option>
+        <option>Tax Advisory</option>
+        <option>Bookkeeping & Accounting</option>
+        <option>CFO Services</option>
+        <option>Audit & Assurance</option>
+        <option>Business Consulting</option>
+        <option>Estate & Trust Planning</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Biggest LinkedIn challenge? (optional)</label>
+      <textarea id="fm" placeholder="e.g. I tried posting but nothing happened..."></textarea>
+    </div>
     <button class="modal-submit" onclick="submitForm()">Send My Request →</button>
     <p class="modal-note">No spam. No sales calls. Just an honest conversation.</p>
   </div>
 </div>
 
 <script>
-document.querySelectorAll('[data-key]').forEach(el => { const k = el.getAttribute('data-key'); if(STATS[k]) el.textContent = STATS[k]; });
-window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('sc', scrollY > 20); });
-const ro = new IntersectionObserver(entries => { entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(() => e.target.classList.add('on'), i*60); }); }, {threshold:0.1});
+// Inject stats
+document.querySelectorAll('[data-key]').forEach(el => {
+  const k = el.getAttribute('data-key');
+  if (STATS[k]) el.textContent = STATS[k];
+});
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 20);
+});
+
+// Scroll reveal
+const ro = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('on'), i * 60);
+    }
+  });
+}, { threshold: 0.1 });
 document.querySelectorAll('.r').forEach(el => ro.observe(el));
-function openModal(e) { if(e) e.preventDefault(); document.getElementById('modalOv').classList.add('open'); document.body.style.overflow='hidden'; }
-function closeModal() { document.getElementById('modalOv').classList.remove('open'); document.body.style.overflow=''; }
-function handleOv(e) { if(e.target===document.getElementById('modalOv')) closeModal(); }
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
-function submitForm() { const n=document.getElementById('fn').value.trim(),em=document.getElementById('fe').value.trim(); if(!n||!em){alert('Please enter your name and email.');return;} alert('Thank you, '+n+'! I\'ll be in touch within 24 hours.'); closeModal(); }
+
+// Modal
+function openModal(e) { if(e) e.preventDefault(); document.getElementById('modalOv').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeModal() { document.getElementById('modalOv').classList.remove('open'); document.body.style.overflow = ''; }
+function handleOvClick(e) { if (e.target === document.getElementById('modalOv')) closeModal(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+function submitForm() {
+  const name = document.getElementById('fn').value.trim();
+  const email = document.getElementById('fe').value.trim();
+  if (!name || !email) { alert('Please enter your name and email.'); return; }
+  // Replace with your Formspree endpoint or Calendly redirect
+  alert('Thank you, ' + name + '! I\'ll be in touch within 24 hours.');
+  closeModal();
+}
 </script>
 </body>
 </html>
