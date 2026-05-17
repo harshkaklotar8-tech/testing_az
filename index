@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh Kaklotar — LinkedIn Branding for US CPAs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="data.js"></script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --dark:    #0a0e1a;
+  --dark2:   #111827;
+  --dark3:   #1c2436;
+  --white:   #ffffff;
+  --off:     #f8f9fc;
+  --ink:     #0a0e1a;
+  --ink2:    #374151;
+  --ink3:    #6b7280;
+  --line:    #e5e7eb;
+  --purple:  #635bff;
+  --purple2: #4f46e5;
+  --teal:    #06b6d4;
+  --grad:    linear-gradient(135deg, #635bff 0%, #06b6d4 100%);
+  --grad2:   linear-gradient(135deg, #4f46e5 0%, #0891b2 100%);
+  --r:       8px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 64px; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 48px;
+  background: rgba(10,14,26,0.96);
+  backdrop-filter: blur(12px);
+}
+.nav-logo {
+  font-size: 16px; font-weight: 700; color: var(--white);
+  text-decoration: none; letter-spacing: -0.02em;
+}
+.nav-logo span {
+  background: var(--grad); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; background-clip: text;
+}
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-size: 13px; color: rgba(255,255,255,0.6);
+  text-decoration: none; transition: color 0.2s; font-weight: 400;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-btn {
+  font-size: 13px; font-weight: 600;
+  background: var(--grad); color: var(--white);
+  padding: 10px 22px; border-radius: 100px;
+  text-decoration: none; letter-spacing: -0.01em;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.nav-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.nav-mobile-btn { display: none; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--dark);
+  padding: 130px 48px 100px;
+  position: relative; overflow: hidden;
+  text-align: center;
+}
+
+/* Mesh gradient background */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(99,91,255,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(6,182,212,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 100%, rgba(99,91,255,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Grid lines */
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  padding: 6px 16px; border-radius: 100px;
+  font-size: 12px; color: rgba(255,255,255,0.7);
+  margin-bottom: 32px; font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+.badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--grad); flex-shrink: 0;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 76px);
+  font-weight: 800; line-height: 1.05;
+  letter-spacing: -0.04em; color: var(--white);
+  margin-bottom: 24px;
+}
+.hero h1 .grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: clamp(15px, 2vw, 19px);
+  color: rgba(255,255,255,0.55); line-height: 1.7;
+  margin-bottom: 40px; font-weight: 300;
+  max-width: 560px; margin-left: auto; margin-right: auto;
+}
+
+.hero-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 64px; }
+
+.btn-grad {
+  font-size: 14px; font-weight: 600;
+  background: var(--grad); color: var(--white);
+  padding: 14px 32px; border-radius: 100px;
+  text-decoration: none; transition: all 0.2s;
+  letter-spacing: -0.01em;
+}
+.btn-grad:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,91,255,0.4); }
+
+.btn-outline-white {
+  font-size: 14px; font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.8);
+  padding: 14px 32px; border-radius: 100px;
+  text-decoration: none; transition: all 0.2s;
+  letter-spacing: -0.01em;
+}
+.btn-outline-white:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+
+/* Hero stats */
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  max-width: 720px; margin: 0 auto;
+}
+.hstat {
+  padding: 24px 20px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.hstat:last-child { border-right: none; }
+.hstat-num {
+  font-size: clamp(22px, 3vw, 30px); font-weight: 700;
+  background: var(--grad); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; background-clip: text;
+  display: block; line-height: 1; letter-spacing: -0.03em;
+}
+.hstat-lbl {
+  font-size: 11px; color: rgba(255,255,255,0.4);
+  display: block; margin-top: 6px; font-weight: 400;
+}
+
+/* ── FIRMS ── */
+.firms-strip {
+  background: var(--off);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 24px 48px;
+}
+.firms-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+}
+.firms-label {
+  font-size: 11px; font-weight: 600; color: var(--ink3);
+  letter-spacing: 0.06em; text-transform: uppercase; flex-shrink: 0;
+}
+.firms-list { display: flex; gap: 32px; flex-wrap: wrap; }
+.firm-name {
+  font-size: 13px; font-weight: 700; color: var(--ink3);
+  letter-spacing: -0.01em;
+}
+
+/* ── SECTIONS ── */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.sec { padding: 96px 0; }
+.sec-alt { background: var(--off); }
+
+.sec-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  color: var(--purple); letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.sec-h2 {
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 800; letter-spacing: -0.04em;
+  line-height: 1.1; color: var(--ink); margin-bottom: 14px;
+}
+.sec-h2 em { font-style: normal; color: var(--ink3); }
+.sec-p {
+  font-size: 16px; color: var(--ink3);
+  max-width: 480px; line-height: 1.7; font-weight: 300;
+}
+
+/* Problem cards */
+.prob-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 16px; margin-top: 52px;
+}
+.prob-card {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: 14px; padding: 28px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.prob-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); transform: translateY(-2px); }
+.prob-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, rgba(99,91,255,0.1), rgba(6,182,212,0.1));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: 16px;
+}
+.prob-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.02em; }
+.prob-body { font-size: 13px; color: var(--ink3); line-height: 1.7; }
+
+/* Process */
+.process-wrap {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+}
+.process-steps { margin-top: 0; }
+.proc-step {
+  display: flex; gap: 20px; padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.proc-step:last-child { border-bottom: none; }
+.proc-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--grad); color: var(--white);
+  font-size: 13px; font-weight: 700; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.proc-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; letter-spacing: -0.02em; }
+.proc-body { font-size: 13px; color: var(--ink3); line-height: 1.7; }
+
+/* Packages */
+.pkg-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 16px; margin-top: 52px;
+}
+.pkg {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: 16px; padding: 32px 24px;
+  display: flex; flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.pkg:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.07); transform: translateY(-3px); }
+.pkg.pop {
+  background: var(--dark);
+  border-color: transparent;
+}
+.pop-badge {
+  position: absolute; top: -12px; left: 24px;
+  background: var(--grad); color: var(--white);
+  font-size: 11px; font-weight: 700;
+  padding: 4px 14px; border-radius: 100px; letter-spacing: 0.02em;
+}
+.pkg-tier {
+  font-size: 10px; font-weight: 700; color: var(--ink3);
+  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;
+}
+.pkg.pop .pkg-tier { color: rgba(255,255,255,0.4); }
+.pkg-name {
+  font-size: 22px; font-weight: 800;
+  letter-spacing: -0.03em; color: var(--ink); margin-bottom: 6px;
+}
+.pkg.pop .pkg-name { color: var(--white); }
+.pkg-tag {
+  font-size: 13px; color: var(--ink3); font-family: 'Instrument Serif', serif;
+  font-style: italic; margin-bottom: 20px;
+}
+.pkg.pop .pkg-tag { color: rgba(255,255,255,0.5); }
+.pkg-line { border: none; border-top: 1px solid var(--line); margin-bottom: 20px; }
+.pkg.pop .pkg-line { border-color: rgba(255,255,255,0.1); }
+.pkg-feats { list-style: none; flex: 1; margin-bottom: 24px; }
+.pkg-feats li {
+  font-size: 13px; color: var(--ink2); padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex; gap: 10px; line-height: 1.5;
+}
+.pkg.pop .pkg-feats li { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.08); }
+.pkg-feats li:last-child { border-bottom: none; }
+.pkg-feats li::before {
+  content: '✓'; font-weight: 700; font-size: 12px;
+  flex-shrink: 0; margin-top: 1px;
+  background: var(--grad); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; background-clip: text;
+}
+.pkg-cta {
+  display: block; text-align: center;
+  font-size: 13px; font-weight: 600;
+  padding: 13px; border-radius: 100px;
+  text-decoration: none; letter-spacing: -0.01em; transition: all 0.2s;
+  border: 1.5px solid var(--line); color: var(--ink);
+}
+.pkg-cta:hover { border-color: var(--purple); color: var(--purple); }
+.pkg.pop .pkg-cta {
+  background: var(--grad); color: var(--white); border: none;
+}
+.pkg.pop .pkg-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+.pkg-terms { font-size: 11px; color: var(--ink3); text-align: center; margin-top: 10px; }
+.pkg.pop .pkg-terms { color: rgba(255,255,255,0.3); }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 72px; align-items: center; }
+.about-visual {
+  background: var(--dark); border-radius: 20px;
+  aspect-ratio: 1; display: flex; align-items: center;
+  justify-content: center; position: relative; overflow: hidden;
+}
+.about-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(99,91,255,0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 70%, rgba(6,182,212,0.2) 0%, transparent 60%);
+}
+.about-initials {
+  font-size: 80px; font-weight: 800; letter-spacing: -0.04em;
+  background: var(--grad); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; background-clip: text;
+  position: relative; z-index: 1;
+}
+.about-name {
+  font-size: clamp(26px, 3vw, 38px); font-weight: 800;
+  letter-spacing: -0.04em; margin-bottom: 4px;
+}
+.about-role {
+  font-size: 16px; color: var(--purple);
+  font-family: 'Instrument Serif', serif; font-style: italic;
+  margin-bottom: 24px;
+}
+.about-body {
+  font-size: 15px; color: var(--ink2); line-height: 1.8;
+  margin-bottom: 28px; font-weight: 300;
+}
+.about-body strong { color: var(--ink); font-weight: 700; }
+.creds { display: flex; flex-direction: column; gap: 10px; }
+.cred {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--ink2);
+}
+.cred-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--grad); flex-shrink: 0;
+}
+
+/* Proof dark section */
+.proof-dark {
+  background: var(--dark); padding: 96px 0; position: relative; overflow: hidden;
+}
+.proof-dark::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(99,91,255,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 50%, rgba(6,182,212,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+.proof-inner { position: relative; z-index: 1; text-align: center; }
+.proof-q {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-style: italic; color: rgba(255,255,255,0.85);
+  line-height: 1.5; margin-bottom: 12px; max-width: 700px; margin-left: auto; margin-right: auto;
+}
+.proof-q em {
+  font-style: normal;
+  background: var(--grad); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; background-clip: text;
+}
+.proof-attr {
+  font-size: 12px; color: rgba(255,255,255,0.3);
+  letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 52px;
+}
+.proof-nums {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1px; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; overflow: hidden;
+  max-width: 640px; margin: 0 auto;
+}
+.pn-cell {
+  padding: 28px 20px;
+  background: rgba(255,255,255,0.03);
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.pn-cell:last-child { border-right: none; }
+.pn-big {
+  font-size: 30px; font-weight: 800; display: block; line-height: 1;
+  letter-spacing: -0.04em;
+  background: var(--grad); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; background-clip: text;
+}
+.pn-lbl { font-size: 11px; color: rgba(255,255,255,0.35); display: block; margin-top: 6px; }
+
+/* Final CTA */
+.fcta {
+  background: var(--off); padding: 96px 0;
+  border-top: 1px solid var(--line); text-align: center;
+}
+.fcta-box { max-width: 560px; margin: 0 auto; }
+.fcta-box h2 {
+  font-size: clamp(28px, 4vw, 52px); font-weight: 800;
+  letter-spacing: -0.04em; margin-bottom: 16px; line-height: 1.1;
+}
+.fcta-box p {
+  font-size: 16px; color: var(--ink3); line-height: 1.7;
+  margin-bottom: 36px; font-weight: 300;
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 32px 48px;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 16px;
+  max-width: 100%;
+}
+.footer-logo {
+  font-size: 14px; font-weight: 700; color: var(--white);
+  text-decoration: none; letter-spacing: -0.02em;
+}
+.footer-logo span {
+  background: var(--grad); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; background-clip: text;
+}
+.footer-links { display: flex; gap: 28px; }
+.footer-links a {
+  font-size: 13px; color: rgba(255,255,255,0.4);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+/* Modal */
+.modal-ov {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(10,14,26,0.7); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+  opacity: 0; visibility: hidden; transition: all 0.25s;
+}
+.modal-ov.open { opacity: 1; visibility: visible; }
+.modal-box {
+  background: var(--white); border-radius: 20px;
+  padding: 44px; max-width: 460px; width: 100%;
+  position: relative; border: 1px solid var(--line);
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.25s;
+  max-height: 90vh; overflow-y: auto;
+}
+.modal-ov.open .modal-box { transform: none; }
+.modal-close {
+  position: absolute; top: 14px; right: 16px;
+  background: var(--off); border: none; border-radius: 50%;
+  width: 30px; height: 30px; cursor: pointer; font-size: 14px;
+  color: var(--ink2); display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.modal-close:hover { background: var(--line); }
+.modal-tag { font-size: 11px; font-weight: 700; color: var(--purple); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+.modal-box h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 6px; }
+.modal-box > p { font-size: 13px; color: var(--ink3); margin-bottom: 24px; line-height: 1.6; }
+.fg { margin-bottom: 14px; }
+.fg label { font-size: 10px; font-weight: 700; color: var(--ink2); letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+.fg input, .fg select, .fg textarea {
+  width: 100%; border: 1.5px solid var(--line); border-radius: var(--r);
+  padding: 11px 14px; font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; color: var(--ink); background: var(--white);
+  outline: none; transition: border-color 0.2s;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--purple); }
+.fg textarea { resize: vertical; min-height: 72px; }
+.modal-submit {
+  width: 100%; margin-top: 4px;
+  background: var(--grad); color: var(--white);
+  border: none; border-radius: 100px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; font-weight: 600;
+  padding: 15px; cursor: pointer; letter-spacing: -0.01em;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.modal-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+.modal-note { font-size: 11px; color: var(--ink3); text-align: center; margin-top: 10px; }
+
+/* Reveal */
+.r { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.r.on { opacity: 1; transform: none; }
+.r.d1 { transition-delay: 0.1s; } .r.d2 { transition-delay: 0.2s; } .r.d3 { transition-delay: 0.3s; }
+
+/* Mobile */
+@media (max-width: 900px) {
+  nav { padding: 0 20px; }
+  .nav-links, .nav-btn { display: none; }
+  .nav-mobile-btn {
+    display: block; font-size: 13px; font-weight: 600;
+    background: var(--grad); color: var(--white);
+    padding: 9px 18px; border-radius: 100px; text-decoration: none;
+  }
+  .hero { padding: 100px 20px 64px; }
+  .hero h1 { font-size: 36px; }
+  .hero-sub { font-size: 15px; }
+  .hero-btns { flex-direction: column; align-items: stretch; }
+  .btn-grad, .btn-outline-white { text-align: center; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .hstat:nth-child(2) { border-right: none; }
+  .hstat:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.08); }
+  .hstat:nth-child(4) { border-right: none; border-top: 1px solid rgba(255,255,255,0.08); }
+  .firms-strip { padding: 20px; }
+  .firms-inner { flex-direction: column; gap: 12px; }
+  .wrap { padding: 0 20px; }
+  .sec { padding: 60px 0; }
+  .prob-grid { grid-template-columns: 1fr; gap: 12px; }
+  .process-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .pkg-grid { grid-template-columns: 1fr; gap: 12px; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-visual { aspect-ratio: 16/9; }
+  .about-initials { font-size: 56px; }
+  .proof-dark { padding: 60px 0; }
+  .proof-nums { grid-template-columns: 1fr; }
+  .pn-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .pn-cell:last-child { border-bottom: none; }
+  .fcta { padding: 60px 0; }
+  footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+  .modal-box { padding: 28px 20px; }
+}
+@media (max-width: 420px) {
+  .hero-stats { grid-template-columns: 1fr; }
+  .hstat { border-right: none !important; border-top: 1px solid rgba(255,255,255,0.08); }
+  .hstat:first-child { border-top: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Harsh<span>Kaklotar</span></a>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#packages">Services</a>
+    <a href="#about">About</a>
+  </div>
+  <a href="#" class="nav-btn" onclick="openModal(event)">Book a Call</a>
+  <a href="#" class="nav-mobile-btn" onclick="openModal(event)">Book a Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge r"><div class="badge-dot"></div>LinkedIn Branding · US CPA Professionals</div>
+    <h1 class="r d1">Turn your expertise into<br><span class="grad-text">inbound clients.</span></h1>
+    <p class="hero-sub r d2">I help US CPA professionals become the most visible expert in their niche — fully managed, done for you, without writing a single word.</p>
+    <div class="hero-btns r d3">
+      <a href="#" class="btn-grad" onclick="openModal(event)">Book a Free Strategy Call</a>
+      <a href="#packages" class="btn-outline-white">View Services</a>
+    </div>
+    <div class="hero-stats r d3">
+      <div class="hstat">
+        <span class="hstat-num" data-key="impressions">—</span>
+        <span class="hstat-lbl">Total impressions</span>
+      </div>
+      <div class="hstat">
+        <span class="hstat-num" data-key="reached">—</span>
+        <span class="hstat-lbl">Professionals reached</span>
+      </div>
+      <div class="hstat">
+        <span class="hstat-num" data-key="followers">—</span>
+        <span class="hstat-lbl">Followers gained</span>
+      </div>
+      <div class="hstat">
+        <span class="hstat-num">Big 4</span>
+        <span class="hstat-lbl">Firms in audience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIRMS -->
+<div class="firms-strip">
+  <div class="firms-inner">
+    <span class="firms-label">Audience includes professionals from</span>
+    <div class="firms-list">
+      <span class="firm-name">KPMG</span>
+      <span class="firm-name">Deloitte</span>
+      <span class="firm-name">EY</span>
+      <span class="firm-name">EisnerAmper</span>
+      <span class="firm-name">AccSource</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="sec">
+  <div class="wrap">
+    <span class="sec-tag r">The Problem</span>
+    <h2 class="sec-h2 r">Most CPAs are exceptional.<br><em>Nobody knows it.</em></h2>
+    <p class="sec-p r">You built your practice on expertise. But expertise alone doesn't fill your pipeline anymore.</p>
+    <div class="prob-grid">
+      <div class="prob-card r"><div class="prob-icon">📨</div><div class="prob-title">Referral dependency</div><div class="prob-body">One slow quarter and revenue drops. You have no predictable inbound channel outside your existing network.</div></div>
+      <div class="prob-card r d1"><div class="prob-icon">👤</div><div class="prob-title">Invisible expertise</div><div class="prob-body">You know tax strategy, advisory, M&A — but nobody outside your current clients knows it exists.</div></div>
+      <div class="prob-card r d2"><div class="prob-icon">📈</div><div class="prob-title">The authority gap</div><div class="prob-body">A CPA posting twice a week on LinkedIn is pulling CFO inquiries every month from companies you'd never get referred to.</div></div>
+      <div class="prob-card r d3"><div class="prob-icon">⏱</div><div class="prob-title">No time to fix it</div><div class="prob-body">Every hour on content is an hour not billing. The trap compounds — and most CPAs never escape it on their own.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec sec-alt" id="how">
+  <div class="wrap">
+    <div class="process-wrap">
+      <div>
+        <span class="sec-tag r">How It Works</span>
+        <h2 class="sec-h2 r">Done for you.<br><em>Start to finish.</em></h2>
+        <p class="sec-p r">You focus on your clients. I handle everything — strategy, writing, publishing, and outreach.</p>
+      </div>
+      <div>
+        <div class="proc-step r"><div class="proc-num">01</div><div><div class="proc-title">Niche & voice discovery</div><div class="proc-body">One 60-minute call. I learn your speciality, target clients, and how you communicate. Everything documented before we write a word.</div></div></div>
+        <div class="proc-step r d1"><div class="proc-num">02</div><div><div class="proc-title">Content system build</div><div class="proc-body">Full content calendar, every post written around your real expertise, publishing managed. You review — nothing goes live without sign-off.</div></div></div>
+        <div class="proc-step r d2"><div class="proc-num">03</div><div><div class="proc-title">Visibility expansion</div><div class="proc-body">Strategic engagement on ideal client posts, targeted connection outreach to US CFOs and business owners.</div></div></div>
+        <div class="proc-step r d3"><div class="proc-num">04</div><div><div class="proc-title">Monthly results reporting</div><div class="proc-body">Clear reports tracking impressions, follower growth, and conversations started — so you see exactly what LinkedIn is producing.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="sec" id="packages">
+  <div class="wrap">
+    <span class="sec-tag r">Services</span>
+    <h2 class="sec-h2 r">Choose your level<br><em>of visibility.</em></h2>
+    <p class="sec-p r">All engagements minimum 3 months. Pricing shared on your strategy call.</p>
+    <div class="pkg-grid">
+      <div class="pkg r"><div class="pkg-tier">Tier 01</div><div class="pkg-name">Starter</div><div class="pkg-tag">Consistent presence, zero effort</div><hr class="pkg-line"><ul class="pkg-feats"><li>Full LinkedIn profile overhaul</li><li>8 posts per month</li><li>Headline, banner & about rewrite</li><li>Monthly strategy call</li><li>Hook & hashtag strategy</li><li>End-of-month analytics report</li></ul><a href="#" class="pkg-cta" onclick="openModal(event)">Get Pricing</a><div class="pkg-terms">3 · 6 · 12 month terms</div></div>
+      <div class="pkg pop r d1"><div class="pop-badge">Most Popular</div><div class="pkg-tier">Tier 02</div><div class="pkg-name">Authority</div><div class="pkg-tag">Become the go-to CPA in your niche</div><hr class="pkg-line"><ul class="pkg-feats"><li>Everything in Starter</li><li>16 posts per month</li><li>Daily engagement management</li><li>ICP-targeted connection outreach</li><li>Weekly strategy call</li><li>Banner & headline A/B refresh</li><li>Monthly performance report</li></ul><a href="#" class="pkg-cta" onclick="openModal(event)">Get Pricing</a><div class="pkg-terms">3 · 6 · 12 month terms</div></div>
+      <div class="pkg r d2"><div class="pkg-tier">Tier 03</div><div class="pkg-name">Rainmaker</div><div class="pkg-tag">Full content + outbound system</div><hr class="pkg-line"><ul class="pkg-feats"><li>Everything in Authority</li><li>20 posts per month</li><li>DM outreach to CFOs & owners</li><li>Lead pipeline tracking</li><li>Newsletter ghostwriting (2/mo)</li><li>Speaking opportunity prep</li><li>Quarterly brand audit</li></ul><a href="#" class="pkg-cta" onclick="openModal(event)">Get Pricing</a><div class="pkg-terms">3 · 6 · 12 month terms</div></div>
+      <div class="pkg r d3"><div class="pkg-tier">Tier 04</div><div class="pkg-name">Empire</div><div class="pkg-tag">National reputation, full management</div><hr class="pkg-line"><ul class="pkg-feats"><li>Everything in Rainmaker</li><li>Podcast & media pitching</li><li>LinkedIn + newsletter managed</li><li>Direct strategist access</li><li>Monthly ROI attribution</li><li>New service launch support</li><li>Quarterly competitor analysis</li></ul><a href="#" class="pkg-cta" onclick="openModal(event)">Get Pricing</a><div class="pkg-terms">3 · 6 · 12 month terms</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec sec-alt" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-visual r"><div class="about-initials">HK</div></div>
+      <div>
+        <span class="sec-tag r">About</span>
+        <div class="about-name r d1">Harsh Kaklotar</div>
+        <div class="about-role r d1">LinkedIn Strategist · US CPA Professionals</div>
+        <p class="about-body r d2">I'm a <strong>CA Finalist with 4 years of US accounting experience</strong> — which means I understand your work at a level most marketers never will. I know tax advisory, client onboarding, billing structures, and the language CPAs use with their clients. Every post I write for you sounds like someone who actually knows the profession.</p>
+        <div class="creds r d3">
+          <div class="cred"><div class="cred-dot"></div>CA Finalist — ICAI</div>
+          <div class="cred"><div class="cred-dot"></div>QuickBooks ProAdvisor Certified</div>
+          <div class="cred"><div class="cred-dot"></div>4 Years US Accounting & KPO Experience</div>
+          <div class="cred"><div class="cred-dot"></div>EA Certification In Progress</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof-dark">
+  <div class="wrap proof-inner">
+    <p class="proof-q r">"Before managing your LinkedIn, I built my own — <em>29,779 impressions, 306 followers, Big 4 firms watching</em> — in under 30 days."</p>
+    <p class="proof-attr r">Harsh Kaklotar · Own LinkedIn Profile · Verified Analytics</p>
+    <div class="proof-nums r">
+      <div class="pn-cell"><span class="pn-big" data-key="topPost">—</span><span class="pn-lbl">Best post impressions</span></div>
+      <div class="pn-cell"><span class="pn-big" data-key="reached">—</span><span class="pn-lbl">Unique professionals reached</span></div>
+      <div class="pn-cell"><span class="pn-big">54.7%</span><span class="pn-lbl">Audience in accounting</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="fcta">
+  <div class="wrap">
+    <div class="fcta-box">
+      <h2 class="r">Your next client is already on LinkedIn.</h2>
+      <p class="r">Book a free 20-minute strategy call. No pitch, no pressure — just a clear picture of what your LinkedIn could look like in 90 days.</p>
+      <a href="#" class="btn-grad r" onclick="openModal(event)" style="display:inline-block;">Book Your Free Strategy Call</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="footer-logo">Harsh<span>Kaklotar</span>.me</a>
+  <div class="footer-links">
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <a href="#packages">Services</a>
+    <a href="#" onclick="openModal(event)">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Harsh Kaklotar</div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-ov" id="modalOv" onclick="handleOv(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-tag">Free Strategy Call</div>
+    <h3>Let's talk about your LinkedIn</h3>
+    <p>Fill this out and I'll get back to you within 24 hours.</p>
+    <div class="fg"><label>Full Name</label><input type="text" id="fn" placeholder="John Smith, CPA"></div>
+    <div class="fg"><label>Email Address</label><input type="email" id="fe" placeholder="john@smithcpa.com"></div>
+    <div class="fg"><label>LinkedIn URL</label><input type="url" id="fl" placeholder="linkedin.com/in/johnsmith"></div>
+    <div class="fg"><label>Your Specialty</label><select id="fs"><option value="">Select your niche...</option><option>Tax Advisory</option><option>Bookkeeping & Accounting</option><option>CFO Services</option><option>Audit & Assurance</option><option>Business Consulting</option><option>Other</option></select></div>
+    <div class="fg"><label>Biggest LinkedIn challenge? (optional)</label><textarea id="fm" placeholder="e.g. I tried posting but nothing happened..."></textarea></div>
+    <button class="modal-submit" onclick="submitForm()">Send My Request →</button>
+    <p class="modal-note">No spam. No sales calls. Just an honest conversation.</p>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('[data-key]').forEach(el => { const k = el.getAttribute('data-key'); if(STATS[k]) el.textContent = STATS[k]; });
+window.addEventListener('scroll', () => {});
+const ro = new IntersectionObserver(entries => { entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(() => e.target.classList.add('on'), i*60); }); }, {threshold:0.1});
+document.querySelectorAll('.r').forEach(el => ro.observe(el));
+function openModal(e) { if(e) e.preventDefault(); document.getElementById('modalOv').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeModal() { document.getElementById('modalOv').classList.remove('open'); document.body.style.overflow=''; }
+function handleOv(e) { if(e.target===document.getElementById('modalOv')) closeModal(); }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+function submitForm() { const n=document.getElementById('fn').value.trim(),em=document.getElementById('fe').value.trim(); if(!n||!em){alert('Please enter your name and email.');return;} alert('Thank you, '+n+'! I\'ll be in touch within 24 hours.'); closeModal(); }
+</script>
+</body>
+</html>
